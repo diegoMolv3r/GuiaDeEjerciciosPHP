@@ -2,37 +2,33 @@
     // a) función semaforo_a($color): Resuelva la solución utilizando if else
     function semaforo_a($color){
         if($color == "rojo"){
-            echo "Frene";
+            return "Frene";
         }elseif ($color == "amarillo"){
-            echo "Precaución";
+            return "Precaución";
         }elseif ($color == "verde"){
-            echo "Avance";
+            return "Avance";
         }else{
-            echo "Estado Desconocido";
+            return "Estado Desconocido";
         }
     }
-
     // b) función semaforo_b($color): Resuelva la solución utilizando if inline (return?:)
     function semaforo_b($color){
-        echo ($color == "rojo") ? "Frene" : (($color == "amarillo") ? "Precaución" : (($color == "verde") ? "Avance" : "Estado Desconocido"));
+        return ($color == "rojo") ? "Frene" : (($color == "amarillo") ? "Precaución" : (($color == "verde") ? "Avance" : "Estado Desconocido"));
     }
-
-
     // c) función semaforo_c($color): Resuelva la solución utilizando switch
     function semaforo_c($color){
         switch($color){
             case "rojo":
-                echo "Frene";
+                return "Frene";
                 break;
             case "amarillo":
-                echo "Precaucion";
+                return "Precaucion";
                 break;
             case "verde":
-                echo "Avance";
+                return "Avance";
                 break;
             default:
-                echo "Estado Desconocido";
+                return "Estado Desconocido";
                 break;
         }
     }
-?>
