@@ -1,6 +1,10 @@
 <?php
     include_once("./Ex1/ex1.php");
     include_once("./Ex2/ex2.php");
+    include_once("./Ex3/ex3.php");
+    include_once("./Ex4/ex4.php");
+    include_once("./Ex5/ex5.php");
+    include_once("./Ex6/ex6.php");
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -14,7 +18,8 @@
 <body class="d-flex justify-content-center min-vh-100">
     <main class="container">
         <header>
-            <h1 class="text-primary" >Diego Molver</h1>
+            <h1 class="text-primary">Guia de Ejercicios PHP</h1>
+            <h2 class="text-warning mb-0">Diego Molver</h2>
         </header>
 
         <section class="row justify-content-center">
@@ -63,7 +68,68 @@
                 <p>Ingresa el valor a = 5 y b = 6 a la función binomioCuadradoPerfecto_a. La salida es: <?php echo binomioCuadradoPerfercto_a(5,6)?></p>
                 <h3 class="text-info">Resuelto con fórmula (a+b)²</h3>
                 <p>Ingresa el valor a = 5 y b = 6 a la función binomioCuadradoPerfecto_b. La salida es: <?php echo binomioCuadradoPerfercto_b(5,6)?></p>
+            </article>
+            <article class="bg-light shadow-lg p-4 my-3 rounded">
+                <header>
+                    <h2 class="text-secondary">Ejercicio 3: Concatenador de Textos</h2>
+                </header>
+                <p>Cree una función concatenar($texto1, $texto2) que reciba dos textos como parámetro y devuelva ambos textos concatenados como uno solo.</p>
+                <h3 class="text-info">Resolución</h3>
+                <p>Ingresan los valor $texto1 = "Hola" y $texto2 = "mundo". La salida es: <?= concatenar("Hola", "mundo")?>  </p>
+            </article>
+            <article class="bg-light shadow-lg p-4 my-3 rounded">
+                <header>
+                    <h2 class="text-secondary">Ejercicio 4: Incrementar</h2>
+                </header>
+                <p>Cree una función llamada incrementar, que reciba una variable y sin devolver nada como retorno de la función, el valor del parámetro haya sido incrementado en 1 (implementar pasaje de parámetros por referencia)</p>
+                <h3 class="text-info">Explicación</h3>
+                <p>Se crea la funcion incrementar(&$variable). Agregando el '&' antes del parámetro hacemos un pasaje de parámetro por referencias. Por lo que crear la variable $numero = 1 por la función incremetar($numero), al imprimirlo la salida es:
+                    <?php $numero = 1; incrementar($numero); echo $numero;?>
+                </p>
+            </article>
+            <article class="bg-light shadow-lg p-4 my-3 rounded">
+                <header>
+                    <h2 class="text-secondary">Ejercicio 5: Sumatoria</h2>
+                </header>
+                <p>Cree una función sumatoria que reciba un vector cómo parámetro, y devuelva la suma de todos sus valores.</p>
+                    <ol>
+                        <li>Función sumatoria_a( $array ): Resuelva la solución utilizando la estructura de control for</li>
+                        <li>Función sumatoria_b( $array ): Resuelva la solución utilizando la estructura for each</li>
+                        <li>Función sumatoria_c( $array ): Resuelva la solución utilizando la estructura de control while</li>
+                    </ol>
+                <h3 class="text-info">Resuelto con FOR</h3>
+                <p>Creamos el array $numeros = array(1, 2, 3, 4, 5, 6, 7, 8, 9). Lo pasamos por la sumatoria_A($numeros) y la salida es: <?php $numeros = array(1, 2, 3, 4, 5, 6, 7, 8, 9); echo sumatoria_A($numeros)?></p>
+                <h3 class="text-info">Resuelto con FOR EACH</h3>
+                <p>Creamos el array $numeros = array(1, 2, 3, 4, 5, 6, 7, 8, 9). Lo pasamos por la sumatoria_B($numeros) y la salida es: <?php echo sumatoria_B($numeros)?></p>
+                <h3 class="text-info">Resuelto con WHILE</h3>
+                <p>Creamos el array $numeros = array(1, 2, 3, 4, 5, 6, 7, 8, 9). Lo pasamos por la sumatoria_C($numeros) y la salida es: <?php echo sumatoria_C($numeros)?></p>
+            </article>
 
+            <article class="bg-light shadow-lg p-4 my-3 rounded">
+                <header>
+                    <h2 class="text-secondary">Ejercicio 6: Saludar con Nombre Personalizado</h2>
+                </header>
+                <p>
+                    Cree una clase llamada Saludar, la misma tendrá un constructor que reciba nombre, apellido de una persona. Dicha clase debe implementar el método saludoFormal( $horario ) el cual debe responder concatenado al nombre un prefijo dependiendo del horario:
+                </p>
+                    <ul>
+                        <li>05 hs a 13 hs “Buenos días”</li>
+                        <li>13 hs a 21 hs “Buenas tardes”</li>
+                        <li>21 hs a 05 hs “Buenas noches”</li>
+                    </ul>
+                <p>
+                    Dicha clase debe implementar también el método saludoInformal( $horario ) el cual debe responder sin el apellido, iniciando con un “hola” por delante y al finalizar concatenar “que tengas un ... (saludo
+                    perteneciente al horario)”.
+                </p>
+
+                <h3 class="text-info">Saludo Informal</h3>
+                <p>Para clase instanciada para Ezequiel Pérez, y parámetro 9 hs la salida es: <b><?php $saludar = new saludar("Ezequiel", "Perez");  echo $saludar->saludoInformal("09:00:00");?></b></p>
+                <p>Para clase instanciada para Ezequiel Pérez, y parámetro 14 hs la salida es: <b><?= $saludar->saludoInformal("14:00:00");?></b></p>
+                <p>Para clase instanciada para Ezequiel Pérez, y parámetro 23 hs la salida es: <b><?= $saludar->saludoInformal("23:00:00");?></b></p>
+                <h3 class="text-info">Saludo Formal</h3>
+                <p>Para clase instanciada para Ezequiel Pérez, y parámetro 9 hs la salida es: <b><?php echo $saludar->saludoFormal("09:00:00");?></b></p>
+                <p>Para clase instanciada para Ezequiel Pérez, y parámetro 14 hs la salida es: <b><?php echo $saludar->saludoFormal("14:00:00");?></b></p>
+                <p>Para clase instanciada para Ezequiel Pérez, y parámetro 23 hs la salida es: <b><?php echo $saludar->saludoFormal("23:00:00");?></b></p>
             </article>
         </section>
     </main>

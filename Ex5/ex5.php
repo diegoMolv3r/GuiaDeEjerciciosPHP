@@ -1,15 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sumatoria</title>
-</head>
-<body>
-    
-</body>
-</html>
-
 <?php
     // Cree una función sumatoria que reciba un vector cómo parámetro, y devuelva la suma de todos sus valores.
     $numeros = array(1, 2, 3, 4, 5, 6, 7, 8, 9);
@@ -22,7 +10,6 @@
         }
         return $resultado;
     }
-    echo "Sumatoria con FOR: " . sumatoria_A($numeros) . "<br>";
 
     // b) función sumatoria_b( $array ): Resuelva la solución utilizando la estructura for each
     function sumatoria_B($arrayParaSumar){
@@ -32,7 +19,6 @@
         }
         return $resultado;
     }
-    echo "Sumatoria con FOR EACH: " . sumatoria_B($numeros) . "<br>";
 
     // c) función sumatoria_c( $array ): Resuelva la solución utilizando la estructura de control while
     function sumatoria_C($arrayParaSumar){
@@ -44,8 +30,3 @@
         }
         return $resultado;
     }
-    echo "Sumatoria con WHILE: " . sumatoria_C($numeros) . "<br>";
-
-
-
-?>
